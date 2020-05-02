@@ -1,0 +1,53 @@
+<script type="text/javascript">
+    RED.nodes.registerType('isy-ws',{
+        category: 'network',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            port: {value: 80},
+            host: {value:""},
+            ssl: {value: false}
+        },
+        credentials: {
+            username: {type:"text"},
+            password: {type:"password"}
+        },
+        inputs:0,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name||"isy-ws";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="isy-ws">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-host"><i class="icon-tag"></i> ISY Host</label>
+        <input type="text" id="node-input-host" placeholder="ISY Host">
+    </div>
+    <div class="form-row">
+        <label for="node-input-port"><i class="icon-tag"></i> ISY Port</label>
+        <input type="text" id="node-input-port" placeholder="ISY Port">
+    </div>
+    <div class="form-row">
+        <label for="node-input-ssl"><i class="icon-tag"></i> Enable SSL</label>
+        <input type="checkbox" id="node-input-ssl" placeholder="Enable SSL">
+    </div>
+    <div class="form-row">
+        <label for="node-input-username"><i class="icon-tag"></i> Username</label>
+        <input type="text" id="node-input-username">
+    </div>
+    <div class="form-row">
+        <label for="node-input-password"><i class="icon-tag"></i> Password</label>
+        <input type="password" id="node-input-password">
+    </div>
+</script>
+
+<script type="text/html" data-help-name="isy-ws">
+    <p>A simple node that converts the message payloads into all lower-case characters</p>
+</script>
